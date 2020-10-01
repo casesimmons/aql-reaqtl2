@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+  font-family: 'Baloo Tammudu 2', cursive;
+}
+
+body {
+  background-color: #282c34;
+  font-family: 'Baloo Tammudu 2', cursive;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#navbar {
+  font-family: 'Baloo Tammudu 2', cursive;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 2px solid lightslategrey;
+  background-color: #282c34;
+  color: rgb(7, 218, 218);
+  font: 18px Arial;
+  height: 30px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+h5 {
+  color: rgb(241, 8, 105);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#graphdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 5%;
+}
+
+#graphs {
+  display: absolute;
+  font-size: 22px;
+  height: 300px;
+  width: 65%;
+  justify-content: center;
+  background-color: #282c34;
+  color: rgb(241, 8, 105);
+  border-radius: 5px;
+  border: 2px solid rgb(7, 218, 218);
+}
+
+button {
+  font-family: 'Baloo Tammudu 2', cursive;
+  background-color:  #282c34;
+  border-radius: 3px;
+  border: 2px solid lightslategrey;
+  color: rgb(7, 218, 218);
+  height: 28px;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+p {
+  font-size: 32px;
+}
+
+#greeting {
+  margin-left: 10px;
+  font-family: 'Baloo Tammudu 2', cursive;
+}
+
+#name {
+  font-size: 22px;
+  margin-bottom: 16px;
+  font-family: 'Baloo Tammudu 2', cursive;
+}
+
+#analytics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 65%;
+}
+
+.col {
+  margin-top: 3%;
+  height: 350px;
+  width: 31%;
+  background-color: #282c34;
+  color: lightslategrey;
+  border-radius: 5px;
+  border: 2px solid rgb(241, 8, 105);
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#footer {
+  font-size: 10px;
+  color: lightslategrey;
+  text-align: left;
+  bottom: 5px;
+  line-height: 95%;
+  margin-top: 12px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
