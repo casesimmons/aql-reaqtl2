@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Graphs from './Graphs';
+import CircleGraph from './CircleGraph';
 import LineChart from './LineChart';
 import Analytics from './Analytics';
 import Footer from './Footer';
@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Graphs />
-      <LineChart />
+      <div id="graphdiv">
+        {/* <CircleGraph /> */}
+        <LineChart />
+      </div>
       <Analytics />
       <Footer />
     </div>

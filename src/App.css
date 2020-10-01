@@ -72,6 +72,10 @@ p {
   font-size: 12px;
 }
 
+svg {
+  overflow: visable;
+}
+
 #greeting {
   margin-left: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;

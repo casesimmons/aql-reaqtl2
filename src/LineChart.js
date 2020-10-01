@@ -1,15 +1,48 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { select, line, curveCardinal } from 'd3';
+import { select, line, curveCardinal, axisBottom, scaleLinear } from 'd3';
 
 function LineChart() {
-  const [data, setData] = useState([25, 30, 45, 60, 20, 65, 75, 15, 35]);
+  const [data, setData] = useState([
+    9,
+    30,
+    25,
+    60,
+    20,
+    65,
+    65,
+    5,
+    35,
+    20,
+    34,
+    60,
+    6,
+    13,
+    14,
+    22,
+    4,
+    44,
+  ]);
   const svgRef = useRef();
+
+  // Called initally and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
+
+    const xScale = scaleLinear()
+      .domain([0, data.length - 1])
+      .range([0, 300]);
+
+    const yScale = scaleLinear().domain([0, 90]).range([150, 0]);
+
+    const xAxis = axisBottom(xScale);
+    svg.select('.x-axis').call(xAxis);
+
+    // Generates the 'd' attribute of the path element
     const myLine = line()
-      .x((value, index) => index * 50)
-      .y((value) => 150 - value)
+      .x((value, index) => xScale(index))
+      .y((value) => yScale(value))
       .curve(curveCardinal);
+    // Renders the path element, and attaches the 'd' attribute from line generator above
     svg
       .selectAll('path')
       .data([data])
@@ -20,7 +53,9 @@ function LineChart() {
   }, [data]);
   return (
     <React.Fragment>
-      <svg ref={svgRef}></svg>
+      <svg ref={svgRef}>
+        <g className="x-axis" />
+      </svg>
       <br />
       <button onClick={() => setData(data.map((value) => value + 5))}>
         Update Data
