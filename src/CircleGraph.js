@@ -3,7 +3,9 @@ import { select } from 'd3';
 
 function Graphs() {
   const [data, setData] = useState([4, 12, 22, 18, 40]);
+
   const svgRef = useRef();
+
   useEffect(() => {
     const svg = select(svgRef.current);
     // Select all circles found in svg and sync them with data

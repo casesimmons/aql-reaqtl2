@@ -32,7 +32,7 @@ function LineChart() {
       .domain([0, data.length - 1])
       .range([0, 300]);
 
-    const yScale = scaleLinear().domain([0, 90]).range([150, 0]);
+    const yScale = scaleLinear().domain([0, 150]).range([150, 0]);
 
     const xAxis = axisBottom(xScale);
     svg.select('.x-axis').call(xAxis);
@@ -57,7 +57,9 @@ function LineChart() {
         <g className="x-axis" />
       </svg>
       <br />
-      <button onClick={() => setData(data.map((value) => value + 5))}>
+      <button
+        onClick={() => setData(data.map((value) => value + Math.random() * 10))}
+      >
         Update Data
       </button>
       <button onClick={() => setData(data.filter((value) => value < 35))}>

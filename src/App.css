@@ -44,6 +44,7 @@ h5 {
   font-size: 16px;
   margin: auto;
   margin-top: 5%;
+  min-height: 350px;
 }
 
 #graphs {
@@ -75,6 +76,10 @@ p {
 svg {
   overflow: visable;
 }
+
+/* .x-axis {
+  transform: translateY(30px);
+} */
 
 #greeting {
   margin-left: 10px;
