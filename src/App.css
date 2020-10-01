@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
-  background-color: #282c34;
-  font-family: 'Baloo Tammudu 2', cursive;
+  background-color: snow;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,17 +15,17 @@ body {
 }
 
 #navbar {
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   position: fixed;
   top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  border-bottom: 2px solid lightslategrey;
-  background-color: #282c34;
-  color: rgb(7, 218, 218);
-  font: 18px Arial;
+  border-bottom: 1px solid lightslategrey;
+  background-color: snow;
+  color: rgb(43, 43, 43);
+  font-size: 18px;
   height: 30px;
   width: 100%;
   padding-top: 10px;
@@ -41,27 +41,26 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
   margin: auto;
   margin-top: 5%;
 }
 
 #graphs {
-  display: absolute;
-  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
   height: 300px;
   width: 65%;
-  justify-content: center;
-  background-color: #282c34;
   color: rgb(241, 8, 105);
-  border-radius: 5px;
-  border: 2px solid rgb(7, 218, 218);
+  border-radius: 2px;
+  border: 1px solid rgb(7, 218, 218);
 }
 
 button {
-  font-family: 'Baloo Tammudu 2', cursive;
-  background-color:  #282c34;
-  border-radius: 3px;
-  border: 2px solid lightslategrey;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 2px;
+  border: 1px solid;
   color: rgb(7, 218, 218);
   height: 28px;
   margin-bottom: 8px;
@@ -70,18 +69,17 @@ button {
 }
 
 p {
-  font-size: 32px;
+  font-size: 12px;
 }
 
 #greeting {
   margin-left: 10px;
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #name {
-  font-size: 22px;
   margin-bottom: 16px;
-  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #analytics {
@@ -96,14 +94,12 @@ p {
   margin-top: 3%;
   height: 350px;
   width: 31%;
-  background-color: #282c34;
   color: lightslategrey;
-  border-radius: 5px;
-  border: 2px solid rgb(241, 8, 105);
+  border-radius: 2px;
+  border: 1px solid rgb(241, 8, 105);
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

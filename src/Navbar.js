@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 function Navbar() {
-
   const [userName, setUserName] = useState('Raql');
 
   function clickbutton(userName) {
-    switch(userName) {
+    switch (userName) {
       case 'Caql':
         setUserName('Jaql');
         break;
@@ -22,11 +21,12 @@ function Navbar() {
   }
 
   return (
-    <div id="navbar"><div id="greeting">Welcome to Aql</div>
+    <div id="navbar">
+      <div id="greeting">Aql</div>
       <div id="name">Welcome, {userName}</div>
-        <button onClick={() => clickbutton(userName)}>Update user</button>
+      <button onClick={() => clickbutton(userName)}>Update user</button>
     </div>
-  )
+  );
 }
 
 export default Navbar;

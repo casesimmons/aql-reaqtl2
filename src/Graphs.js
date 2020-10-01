@@ -1,44 +1,40 @@
-import React, {
-  useState,
-  Component,
-  useEffect
-} from 'react';
-import * as d3 from 'd3';
+import React, { useState, useRef, useEffect } from 'react';
+import { select } from 'd3';
 
-class Graphs extends Component {
-  constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-    this.dataSet = [2, 5, 3, 7, 23];
-  }
-
-  componentDidMount() {
-    let accessToRef = d3.select(this.myRef.current)
-      .append('svg')
-      .attr('width', 200)
-      .attr('height', 70);
-
-    let myCirqls = accessToRef.selectAll("circle")
-      .data(this.dataSet)
-      .enter()
-      .append("circle")
-      .attr("cx", (d,i) => i*35 + 20)
-      .attr("cy", 25)
-      .attr("r", (d, i) => d)
-      .style("fill", "white");
-  }
-
-
-
-  render() {
-    return (
-      <div id="graphdiv">
-      <h5>Aql Analytics</h5><div ref={this.myRef} id="graphs">Insert graphs here</div> 
-      </div>
-    )
-  }
-
-
+function Graphs() {
+  const [data, setData] = useState([25, 30, 45, 60, 20]);
+  const svgRef = useRef();
+  useEffect(() => {
+    const svg = select(svgRef.current);
+    // Select all circles found in svg and sync them with data
+    svg
+      .selectAll('circle')
+      .data(data)
+      // Enter Update Exit pattern (Exit isn't needed in new D3, the new general update pattern)
+      // .join(
+      //   (enter) =>
+      //     enter.append('circle', 'circleClass').attr('r', (value) => value),
+      //   (update) => update.attr('class', 'updatedClass')
+      // )
+      .join('circle')
+      // Circle attributes, radius, x, y, stroke
+      .attr('r', (value) => value)
+      .attr('cx', (value) => value * 2)
+      .attr('cy', (value) => value * 2)
+      .attr('stroke', 'red');
+  }, [data]);
+  return (
+    <React.Fragment>
+      <svg ref={svgRef}></svg>
+      <br />
+      <button onClick={() => setData(data.map((value) => value + 5))}>
+        Update Data
+      </button>
+      <button onClick={() => setData(data.filter((value) => value < 35))}>
+        Filter Data
+      </button>
+    </React.Fragment>
+  );
 }
 
 export default Graphs;
