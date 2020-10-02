@@ -30,12 +30,12 @@ function LineChart() {
 
     const xScale = scaleLinear()
       .domain([0, data.length - 1])
-      .range([0, 300]);
+      .range([0, 600]);
 
     const yScale = scaleLinear().domain([0, 150]).range([150, 0]);
 
     const xAxis = axisBottom(xScale);
-    svg.select('.x-axis').call(xAxis);
+    svg.select('.x-axis').style('transform', 'translateY(150px)').call(xAxis);
 
     // Generates the 'd' attribute of the path element
     const myLine = line()
@@ -44,9 +44,10 @@ function LineChart() {
       .curve(curveCardinal);
     // Renders the path element, and attaches the 'd' attribute from line generator above
     svg
-      .selectAll('path')
+      .selectAll('.line')
       .data([data])
       .join('path')
+      .attr('class', 'line')
       .attr('d', (value) => myLine(value))
       .attr('fill', 'none')
       .attr('stroke', 'red');
@@ -57,14 +58,18 @@ function LineChart() {
         <g className="x-axis" />
       </svg>
       <br />
-      <button
-        onClick={() => setData(data.map((value) => value + Math.random() * 10))}
-      >
-        Update Data
-      </button>
-      <button onClick={() => setData(data.filter((value) => value < 35))}>
-        Filter Data
-      </button>
+      <div className="buttons">
+        <button
+          onClick={() =>
+            setData(data.map((value) => value + Math.random() * 10))
+          }
+        >
+          Update Data
+        </button>
+        <button onClick={() => setData(data.filter((value) => value < 35))}>
+          Filter Data
+        </button>
+      </div>
     </React.Fragment>
   );
 }

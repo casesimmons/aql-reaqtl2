@@ -14,8 +14,8 @@ function App() {
         {/* <CircleGraph /> */}
         <LineChart />
       </div>
-      <Analytics />
-      <Footer />
+      {/* <Analytics />
+      <Footer /> */}
     </div>
   );
 }
