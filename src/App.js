@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import CircleGraph from './CircleGraph';
 import LineChart from './LineChart';
+import LineChartZoom from './LineChartZoom';
 import Analytics from './Analytics';
 import Footer from './Footer';
 import './App.css';
@@ -12,7 +13,7 @@ function App() {
       <Navbar />
       <div id="graphdiv">
         {/* <CircleGraph /> */}
-        <LineChart />
+        <LineChartZoom />
       </div>
       {/* <Analytics />
       <Footer /> */}

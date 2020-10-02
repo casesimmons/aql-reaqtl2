@@ -1,5 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { select, line, curveCardinal, axisBottom, scaleLinear } from 'd3';
+import {
+  select,
+  line,
+  curveCardinal,
+  axisBottom,
+  axisRight,
+  scaleLinear,
+} from 'd3';
 
 function LineChart() {
   const [data, setData] = useState([
@@ -21,6 +28,24 @@ function LineChart() {
     22,
     4,
     44,
+    11,
+    22,
+    27,
+    55,
+    14,
+    65,
+    22,
+    54,
+    24,
+    30,
+    8,
+    23,
+    15,
+    28,
+    44,
+    52,
+    18,
+    47,
   ]);
   const svgRef = useRef();
 
@@ -34,8 +59,13 @@ function LineChart() {
 
     const yScale = scaleLinear().domain([0, 150]).range([150, 0]);
 
-    const xAxis = axisBottom(xScale);
+    const xAxis = axisBottom(xScale)
+      .ticks(data.length - 1)
+      .tickFormat((index) => index + 1);
     svg.select('.x-axis').style('transform', 'translateY(150px)').call(xAxis);
+
+    const yAxis = axisRight(yScale);
+    svg.select('.y-axis').style('transform', 'translateX(600px)').call(yAxis);
 
     // Generates the 'd' attribute of the path element
     const myLine = line()
@@ -56,6 +86,7 @@ function LineChart() {
     <React.Fragment>
       <svg ref={svgRef}>
         <g className="x-axis" />
+        <g className="y-axis" />
       </svg>
       <br />
       <div className="buttons">
