@@ -76,6 +76,15 @@ p {
   font-size: 12px;
 }
 
+span {
+  margin: 20px;
+}
+
+.label {
+  display: inline-block;
+  width: 120px;
+}
+
 /* svg {
   overflow: visible;
   width: 800px;

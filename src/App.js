@@ -33,9 +33,9 @@ function App() {
         <div id="graphs">
           <PieChart
             data={data}
-            width={150}
-            height={150}
-            innerRadius={0}
+            width={200}
+            height={200}
+            innerRadius={50}
             outerRadius={80}
           />
           <LineChartZoom />

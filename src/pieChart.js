@@ -43,8 +43,9 @@ const Pie = (props) => {
       .attr('text-anchor', 'middle')
       .attr('alignment-baseline', 'middle')
       .attr('transform', (d) => `translate(${createArc.centroid(d)})`)
-      .style('fill', 'white')
-      .style('font-size', 6)
+      .style('fill', 'black')
+      .style('font-size', '10')
+      .style('text-align', 'center')
       .text((d) => format(d.value));
   }, [props.data]);
 
