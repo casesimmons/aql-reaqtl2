@@ -54,7 +54,7 @@ function LineChartToZoom({ data, id = 'LineChartToZoom' }) {
       .data([data])
       .join('path')
       .attr('class', 'myLine')
-      .attr('stroke', 'red')
+      .attr('stroke', 'lightblue')
       .attr('fill', 'none')
       .attr('d', lineGenerator);
 
@@ -63,9 +63,9 @@ function LineChartToZoom({ data, id = 'LineChartToZoom' }) {
       .data(data)
       .join('circle')
       .attr('class', 'myDot')
-      .attr('stroke', 'red')
+      .attr('stroke', 'lightblue')
       .attr('r', 2)
-      .attr('fill', 'red')
+      .attr('fill', 'lightblue')
       .attr('cx', (value, index) => xScale(index))
       .attr('cy', yScale);
 
@@ -74,10 +74,11 @@ function LineChartToZoom({ data, id = 'LineChartToZoom' }) {
     svg
       .select('.x-axis')
       .attr('transform', `translate(0, ${height})`)
-      .call(xAxis);
+      .call(xAxis)
+      .style('color', 'white');
 
     const yAxis = axisLeft(yScale);
-    svg.select('.y-axis').call(yAxis);
+    svg.select('.y-axis').style('color', 'white').call(yAxis);
 
     // zoom
     const zoomBehavior = zoom()

@@ -39,11 +39,10 @@ function App() {
             outerRadius={80}
           />
           <LineChartZoom />
-          {/* <CircleGraph /> */}
         </div>
       </div>
-      {/* <Analytics />
-      <Footer /> */}
+      {/* <Analytics /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

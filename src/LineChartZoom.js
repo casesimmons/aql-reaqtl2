@@ -13,10 +13,10 @@ function LineChartZoom() {
         <button
           onClick={() => setData([...data, Math.round(Math.random() * 100)])}
         >
-          Add Data
+          Add
         </button>
         <button onClick={() => setData(data.filter((value) => value < 35))}>
-          Filter Data
+          Filter
         </button>
       </div>
     </React.Fragment>
