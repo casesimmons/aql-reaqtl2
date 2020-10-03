@@ -13,7 +13,7 @@ import {
 import useResizeObserver from './useResizeObserver';
 
 /**
- * Component that renders a ZoomableLineChart
+ * Component that renders a LineChartToZoom
  */
 
 function LineChartToZoom({ data, id = 'LineChartToZoom' }) {
@@ -97,7 +97,7 @@ function LineChartToZoom({ data, id = 'LineChartToZoom' }) {
   return (
     <React.Fragment>
       <div ref={wrapperRef} style={{ marginBottom: '2rem' }}>
-        <svg ref={svgRef}>
+        <svg className="LineChartToZoom" ref={svgRef}>
           <defs>
             <clipPath id={id}>
               <rect x="0" y="0" width="100%" height="100%" />

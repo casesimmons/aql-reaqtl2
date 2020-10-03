@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import * as d3 from 'd3';
 import Navbar from './Navbar';
-import CircleGraph from './CircleGraph';
-import LineChart from './LineChart';
+// import CircleGraph from './CircleGraph';
+// import LineChart from './LineChart';
 import LineChartZoom from './LineChartZoom';
+import PieChart from './pieChart';
 import Analytics from './Analytics';
 import Footer from './Footer';
 import './App.css';
 
 function App() {
+  const generateData = (value, length = 4) =>
+    d3.range(length).map((item, index) => ({
+      date: index,
+      value:
+        value === null || value === undefined ? Math.random() * 100 : value,
+    }));
+
+  const [data, setData] = useState(generateData(0));
+  // const changeData = () => {
+  //   setData(generateData());
+  // };
+
+  useEffect(() => {
+    setData(generateData());
+  }, [!data]);
+
   return (
     <div className="App">
       <Navbar />
       <div id="graphdiv">
-        {/* <CircleGraph /> */}
-        <LineChartZoom />
+        <div id="graphs">
+          <PieChart
+            data={data}
+            width={150}
+            height={150}
+            innerRadius={0}
+            outerRadius={80}
+          />
+          <LineChartZoom />
+          {/* <CircleGraph /> */}
+        </div>
       </div>
       {/* <Analytics />
       <Footer /> */}

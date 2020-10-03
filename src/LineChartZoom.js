@@ -3,7 +3,7 @@ import LineChartToZoom from './LineChartToZoom';
 
 function LineChartZoom() {
   const [data, setData] = useState(
-    Array.from({ length: 50 }, () => Math.round(Math.random() * 100))
+    Array.from({ length: 200 }, () => Math.round(Math.random() * 100))
   );
   return (
     <React.Fragment>
